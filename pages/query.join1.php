@@ -14,6 +14,11 @@ if($url = $editor->getUrl(__FILE__,0) ) {
 
 $tablename = 'rex_yf4b_dokument';
 
+/*
+    Die einzige Änderung (join hinzugefügt) führt dazu, dass zwischen den EP YFORM_DATA_LIST_QUERY
+    und YFORM_DATA_LIST ein SQL-Fehler auftritt. ID nicht meh eindeutig
+*/
+
 \rex_extension::register('YFORM_DATA_LIST_QUERY', function( \rex_extension_point $ep ) use($tablename) {
     $query = $ep->getSubject();
     if( $tablename !== $query->getTablename() ) return;
