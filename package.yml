@@ -1,0 +1,52 @@
+# Alle hier gesetzten Werte können über $addon->getProperty($key) abgefragt werden
+
+package: yf4b2
+version: '1.0.0'
+author: Christoph Böcker
+
+page:
+    title: YForm 4.0 Beta2 Testcase
+    perm: yfb2[]
+    icon: rex-icon fa-flag
+    subpages:
+        tabellen:
+            title: 'Tabellen'
+            subpages:
+                buch:
+                    title: 'Jahrbücher'
+                    icon: rex-icon fa-book
+                    subPath: pages/yform.php
+                dokument:
+                    title: 'Dokumente'
+                    icon: rex-icon fa-file-o
+                    subPath: pages/yform.php
+                scan:
+                    title: 'Scans/Seiten'
+                    icon: rex-icon fa-file-text-o
+                    subPath: pages/yform.php
+                historie:
+                    title: 'Bootshistorie'
+                    icon: rex-icon fa-anchor
+                    subPath: pages/yform.php
+        sql:
+            title: Dokumente (bis YF4b1 ..._SQL)
+        query:
+            title: Dokumente (ab YF4b2 ..._QUERY)
+            subpages:
+                anzeige:
+                    title: Nur EP-Daten anzeigen
+                join1:
+                    title: Join hinzufügen
+
+yform:
+    yf4b2/tabellen/buch:
+        table_name: rex_yf4b_buch
+    yf4b2/tabellen/dokument:
+        table_name: rex_yf4b_dokument
+    yf4b2/tabellen/scan:
+        table_name: rex_yf4b_scan
+    yf4b2/tabellen/historie:
+        table_name: rex_yf4b_historie
+
+requires:
+    redaxo: '^5.12'
